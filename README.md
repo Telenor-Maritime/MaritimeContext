@@ -1,2 +1,2 @@
-# maranics-doc
-Repository for document-sharing between Telenor Maritime and Maranics
+# Maritime Context
+Repository for Telenor Maritimes version of Maritime Context
