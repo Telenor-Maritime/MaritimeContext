@@ -1,0 +1,10 @@
+# MC Howto #
+
+	# 1. Define topic in Client Managment #
+	Example topic: 'MC/V1/first_level/second_level/third_level/end_level'
+
+	# 2. At startup of app publish metadata #
+	Example topic metadata (corspond to the topic above): 'MC/V1/**meta/**first_level/second_level/third_level/end_level'. 
+	The metadata should be verified towards the json schema 'metadata_json_schema.json'. Note that most fields are optional. If data shall be synced to shore the 'sync2Shore' field must be present
+
+	# 3. Publish payload on topic #

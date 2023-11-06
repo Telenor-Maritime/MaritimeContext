@@ -1,0 +1,55 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+	"id": {
+            "type": "integer"
+        },
+	"header": {
+            "type": "string"
+        },
+	"address": {
+            "type": "string"
+        },
+	"status":  {
+	    "type": "boolean"
+	},
+	"severity": {
+            "type": "integer"
+        },
+	"acknowledged": {
+            "type": "object",
+            "properties": {
+		"status":  {
+		    "type": "boolean"
+		},
+		"time": {
+		    "type": "string"
+		},
+		"byWhom": {
+		    "type": "string"
+		}
+	    },
+	    "required": [
+		"status", "time", "byWhom"
+	    ]	    
+	}
+    },
+    "required": [
+        "id", "header", "address", "status"
+    ],
+    "if": {
+        "properties": {
+            "status": {
+                "const": true
+            }
+        }
+    },
+    "then": {
+        "required": [
+            "severity",
+            "acknowledged"
+        ]
+    }
+}
