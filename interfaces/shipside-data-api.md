@@ -135,7 +135,93 @@ URL: 10.246.0.10:8081/api/timeseriesdata/dnvgl-v2/vis-2-3/mbb-modem/GPS.fix.data
 ---
 
 
-### 3.  Private Timeseriesdata API
+### 3. getGPS
+
+***Endpoint:***
+
+```bash
+Method: GET
+Type: 
+URL: 10.246.0.10:8081/api/GPS
+```
+
+***No Authorization
+
+***Query params:***
+
+
+| **Key** | **DataType**     | **Default**          |
+|---------|------------------|----------------------|
+| timefrom | ISO 8601 | 2020-01-01T00:00:00Z |
+| timeto | ISO 8601 | current time |
+| limit | Integer | 1 |
+
+
+The UHS will provide GPS and GPS releated information from several available sources. 1 priority source is brigde.
+
+
+***Response example***
+
+```json
+[
+    {
+        "course": 323.8,
+        "heading": 2,
+        "source": "bridge",
+        "latitude": 59.126066666666674,
+        "longitude": 10.227300000000001,
+        "HDOP": "1.3",
+        "timestamp": "2024-02-01 08:45:15+00:00Z",
+        "speedKnots": 0.1,
+        "speedKph": 0.3
+    }
+]
+```
+---
+source: GPS source
+
+
+### 4. getTraveledDistance
+
+***Endpoint:***
+
+```bash
+Method: GET
+Type: 
+URL: 10.246.0.10:8081/api/traveleddistance
+```
+
+***No Authorization
+
+***Query params:***
+
+
+| **Key** | **DataType**     | **Default**          |
+|---------|------------------|----------------------|
+| timefrom | ISO 8601 | 2020-01-01T00:00:00Z |
+| timeto | ISO 8601 | current time |
+
+
+
+***Response example***
+
+```json
+{
+    "start": "2024-01-31T06:50:09.542Z",
+    "end": "2024-01-31T10:29:51.866Z",
+    "averageSpeed": "19.77 knots",
+    "timeTraveled": "03:39:42",
+    "distanceTraveled": "72.38 nautical miles",
+    "samples": "1169",
+    "precision": "88.69 %"
+}
+```
+---
+samples: The number of samples that is the base for calculation
+precision: The percent of samples compare to the theoretical number of samples
+
+
+### 5.  Private Timeseriesdata API
 
 This API is used to get your private data that is being stored in the UHS.
 
