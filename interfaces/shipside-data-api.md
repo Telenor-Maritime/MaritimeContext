@@ -217,7 +217,7 @@ URL: 10.246.0.10:8081/api/traveleddistance
 }
 ```
 ---
-samples: The number of samples that is the base for calculation
+samples: The number of samples that is the base for calculation  
 precision: The percent of samples compare to the theoretical number of samples
 
 
